@@ -55,7 +55,8 @@ export default function Contact() {
                     <div className="col-md-8">
                         <h1>Contact Us</h1>
 
-                        <form id="contactForm" className="needs-validation" onSubmit="submit" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success" name="contact">
+                        <form id="contactForm" className="needs-validation" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" name="contact">
+                            <input type="hidden" name="form-name" value="contact" />
                             <input name="bot-field" className="d-none" />
                             <div className="mb-3">
                                 <label htmlFor="name" className="form-label">Name</label>
