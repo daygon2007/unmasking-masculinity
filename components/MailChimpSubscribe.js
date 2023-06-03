@@ -77,7 +77,7 @@ const MailchimpSubscribe = ({block}) => {
                                     <h2 className={`mt-0 text-center ${section_title_class}`}>{section_title}</h2>
                                 </div>
                             ) : (null)}
-                            <form onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit} netlify>
                                 <input
                                     type="email"
                                     placeholder="Enter your email"

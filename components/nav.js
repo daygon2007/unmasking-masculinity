@@ -5,6 +5,7 @@ import Link from 'next/link';
 const Navigation = ({ menu }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
+
   const handleToggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
