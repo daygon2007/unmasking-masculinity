@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useCallback, useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-const MailchimpSubscribe = ({block}) => {
+export default function MailchimpSubscribe({ block }) {
     const data = JSON.parse(block.dynamicContent);
     const {
         section_id,
@@ -11,99 +11,102 @@ const MailchimpSubscribe = ({block}) => {
         section_title_class,
     } = data;
 
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [notification, setNotification] = useState("");
 
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [captchaToken, setCaptchaToken] = useState('');
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        if (!validateEmail(email)) {
-            setMessage('Please enter a valid email address.');
-            return;
-        }
-
-        if (!captchaToken) {
-            setMessage('Please complete the reCAPTCHA verification.');
-            return;
-        }
-
-        try {
-            const response = await fetch('/api/recaptcha', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ token: captchaToken, email }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                if (data.success) {
-                    // Perform your desired actions when reCAPTCHA verification is successful
-                    // For example, you can subscribe the email to Mailchimp here
-                    setMessage('Successfully subscribed!');
-                    setEmail('');
-                    setCaptchaToken('');
-                } else {
-                    setMessage('reCAPTCHA verification failed.');
-                }
-            } else {
-                setMessage(`Error: ${data.error}`);
+    const handleSumitForm = useCallback(
+        (e) => {
+            e.preventDefault();
+            if (!executeRecaptcha) {
+                console.log("Execute recaptcha not yet available");
+                return;
             }
-        } catch (error) {
-            setMessage('An error occurred. Please try again later.');
-        }
-    };
+            executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+                console.log(gReCaptchaToken, "response Google reCaptcha server");
+                submitEnquiryForm(gReCaptchaToken);
+            });
+        },
+        [executeRecaptcha]
+    );
 
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
-
-    const handleCaptchaChange = (token) => {
-        setCaptchaToken(token);
+    const submitEnquiryForm = (gReCaptchaToken) => {
+        fetch("/api/enquiry", {
+            method: "POST",
+            headers: {
+                Accept: "application/json, text/plain, */*",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                message: message,
+                gRecaptchaToken: gReCaptchaToken,
+            }),
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res, "response from backend");
+                if (res?.status === "success") {
+                    setNotification(res?.message);
+                } else {
+                    setNotification(res?.message);
+                }
+            });
     };
 
     return (
-        <>
-            <div className={`subscribe-section ${background_color}`} id={section_id}>
-                <div className={`container ${section_class}`}>
-                    <div className="row py-5 justify-content-center">
-                        <div className="col-md-6 text-center">
-                            {section_title ? (
-                                <div className="col-12 mb-5">
-                                    <h2 className={`mt-0 text-center ${section_title_class}`}>{section_title}</h2>
-                                </div>
-                            ) : (null)}
-                            <form onSubmit={handleSubmit} netlify>
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    className="form-control form-control-lg"
-                                />
-                                <ReCAPTCHA
-                                    sitekey={`${process.env.RECAPTCHA_SITE_KEY}`}
-                                    onChange={handleCaptchaChange}
-                                />
-                                <button type="submit" className="btn btn-secondary">
-                                    Subscribe
-                                </button>
-                            </form>
-                            {message && (
-                                <p className={`alert ${data.success ? 'alert-success' : 'alert-danger'}`}>
-                                    {message}
-                                </p>
-                            )}
-                        </div>
+        <div className={`subscribe-section ${background_color}`} id={section_id}>
+            <div className={`container ${section_class}`}>
+                <div className="row py-5 justify-content-center">
+                    <div className="col-md-6 text-center">
+                        {section_title ? (
+                            <div className="col-12 mb-5">
+                                <h2 className={`mt-0 text-center ${section_title_class}`}>{section_title}</h2>
+                            </div>
+                        ) : (null)}
+                        <form onSubmit={handleSumitForm}>
+                            <input
+                                type="text"
+                                name="name"
+                                value={name}
+                                onChange={(e) => setName(e?.target?.value)}
+                                className="form-control mb-3"
+                                placeholder="Name"
+                            />
+                            <input
+                                type="text"
+                                name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e?.target?.value)}
+                                className="form-control mb-3"
+                                placeholder="Email"
+                            />
+                            <textarea
+                                rows={3}
+                                type="text"
+                                name="message"
+                                value={message}
+                                onChange={(e) => setMessage(e?.target?.value)}
+                                className="form-control mb-3"
+                                placeholder="Message"
+                            />
+                            <button type="submit" className="btn btn-light">
+                                Submit
+                            </button>
+
+                        </form>
+                        {notification && (
+                            <p className={`alert`}>
+                                {notification}
+                            </p>
+                        )}
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
-};
-
-export default MailchimpSubscribe;
+}
