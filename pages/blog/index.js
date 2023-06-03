@@ -80,12 +80,12 @@ export default function BlogHome({ allPosts, pageData, menu }) {
                     <LoadMore posts={posts} setPosts={setPosts} />
                 </div>
             </div>
-            <div className={`subscribe-section bg-grey-light`} id="">
-                <div className={`container`}>
+            <div className="subscribe-section bg-grey-light" id="">
+                <div className="container">
                     <div className="row py-5 justify-content-center">
                         <div className="col-md-6 text-center">
                             <div className="col-12 mb-5">
-                                <h2 className={`mt-0 text-center`}>Subscribe to our newsletter</h2>
+                                <h2 className="mt-0 text-center">Subscribe to our newsletter</h2>
                                 <p>Unlock the power of emotional well-being and join our newsletter to receive exclusive insights, resources, and support for men's mental health, empowering you to embrace vulnerability and thrive.</p>
                             </div>
                             <MailchimpSubscribe
