@@ -25,7 +25,7 @@ export default function Subscribe({ block }) {
                         {section_title ? (
                             <div className="col-12 mb-5">
                                 <h2 className={`mt-0 text-center ${section_title_class}`}>{section_title}</h2>
-                                <p>Unlock the power of emotional well-being and join our newsletter to receive exclusive insights, resources, and support for men's mental health, empowering you to embrace vulnerability and thrive.</p>
+                                <p>Unlock the power of emotional well-being and join our newsletter to receive exclusive insights, resources, and support for men&apos;s mental health, empowering you to embrace vulnerability and thrive.</p>
                             </div>
                         ) : (null)}
                         <MailchimpSubscribe

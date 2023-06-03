@@ -86,7 +86,7 @@ export default function BlogHome({ allPosts, pageData, menu }) {
                         <div className="col-md-6 text-center">
                             <div className="col-12 mb-5">
                                 <h2 className="mt-0 text-center">Subscribe to our newsletter</h2>
-                                <p>Unlock the power of emotional well-being and join our newsletter to receive exclusive insights, resources, and support for men's mental health, empowering you to embrace vulnerability and thrive.</p>
+                                <p>Unlock the power of emotional well-being and join our newsletter to receive exclusive insights, resources, and support for men&apos;s mental health, empowering you to embrace vulnerability and thrive.</p>
                             </div>
                             <MailchimpSubscribe
                                 url={process.env.NEXT_PUBLIC_MAILCHIMP_URL}

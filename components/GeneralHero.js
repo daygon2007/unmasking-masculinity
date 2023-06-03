@@ -18,7 +18,6 @@ const GeneralHero = ({ block }) => {
         hero_target
     } = data;
 
-    const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
     const isClient = typeof window !== "undefined";
 
     return (
