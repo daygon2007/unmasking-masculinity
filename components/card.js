@@ -6,7 +6,7 @@ import Date from "./date";
 const Card = ({post}) => {
 
     return (
-        <div className="col-md-3" key={post?.slug}>
+        <div className="col-md-3 mb-3" key={post?.slug}>
             <div className="card">
                 <Image src={post.featuredImage?.node?.sourceUrl} className="card-img-top img-fluid" alt={post.title} width={post.featuredImage?.node?.mediaDetails?.width} height={post.featuredImage?.node?.mediaDetails?.height} />
                 <div className="card-body">

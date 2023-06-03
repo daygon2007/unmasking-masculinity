@@ -9,7 +9,7 @@ import { getMenu } from "@/lib/menu";
 import PodcastFeed from "@/components/PodcastFeed";
 import { getFeed } from "@/lib/rss";
 import RichText from "@/components/RichText";
-import MailchimpSubscribe from "@/components/MailChimpSubscribe";
+import Subscribe from "@/components/MailChimpSubscribe";
 
 export async function getStaticProps() {
     const pageData = await getHomePage();
@@ -52,7 +52,7 @@ export default function Page({ pageData, menu, feed }) {
                     case 'acf/rich-text':
                         return <RichText key={index} block={block} />
                     case 'acf/mailchimp-subscribe':
-                        return <MailchimpSubscribe key={index} block={block} />
+                        return <Subscribe key={index} block={block} />
                     default:
                         return null;
                 }

@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     return (
         <Layout>
             <GoogleReCaptchaProvider
-                reCaptchaKey={`${process.env.RECAPTCHA_SITE_KEY}`}
+                reCaptchaKey={process.env.RECAPTCHA_SITE_KEY}
                 scriptProps={{
                     async: false,
                     defer: false,
