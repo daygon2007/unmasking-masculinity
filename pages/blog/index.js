@@ -68,7 +68,7 @@ export default function BlogHome({ allPosts, pageData, menu }){
             <div className="row">
                 {
                     posts.nodes.map((post) => (
-                        <Card post={post} />
+                        <Card post={post} key={post.slug} />
                     ))
                 }
                 <LoadMore posts={posts} setPosts={setPosts} />

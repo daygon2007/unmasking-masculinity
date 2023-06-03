@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navigation = ({ menu }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -11,11 +12,11 @@ const Navigation = ({ menu }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" href="/">
           <div id='nav-logo'>
             <Image src={'/logo/logo-lightbg-horizontal-notag.svg'} className='img-fluid' width={200} height={100} />
           </div>
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -33,9 +34,9 @@ const Navigation = ({ menu }) => {
           <ul className="navbar-nav">
             {menu?.menuItems?.nodes.map((menuItem, index) => (
               <li className="nav-item" key={index}>
-                <a className="nav-link" href={menuItem.uri}>
+                <Link className="nav-link" href={menuItem.uri}>
                   {menuItem.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
