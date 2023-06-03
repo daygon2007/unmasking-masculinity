@@ -42,7 +42,7 @@ export default function LoadMore({posts, setPosts}) {
     }
     return(
         <>
-            <div class="col-12 mt-3 text-center">
+            <div className="col-12 mt-3 text-center">
                 <button className="btn btn-primary d-inline-block"
                 onClick={handleOnclick} 
                 disabled={buttonDisabled}

@@ -28,17 +28,19 @@ export async function getStaticProps({params}) {
 export async function getStaticPaths() {
     const pageSlugs = await getPageSlugs();
 
-    return{
-        paths: pageSlugs.map((s) => (
-            {
-                params: {
-                    pageSlug: s.slug
-                }
-            }
-        )),
-            fallback: false,
-    }
+    const filteredPaths = pageSlugs.filter((slug) => slug !== 'blog');
+
+    const paths = filteredPaths.map((s) => ({
+        params: { pageSlug: s.slug },
+    }));
+
+    return {
+        paths,
+        fallback: false,
+    };
 }
+
+
 
 export default function Page({ pageData, menu }) {
     const parsedHead = pageData?.seo?.fullHead ? parse(pageData?.seo?.fullHead) : null;

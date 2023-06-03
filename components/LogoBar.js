@@ -12,7 +12,7 @@ const LogoBar = ({ block }) => {
     return (
         <>
             <div className='podcast-links bg-black py-3'>
-                <div class="container">
+                <div className="container">
                     <div className='row align-items-center'>
                         <div className='col-md-2'>
                             <p className='white m-0 p-0'>

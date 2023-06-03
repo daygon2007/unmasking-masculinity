@@ -14,7 +14,7 @@ const Navigation = ({ menu }) => {
       <div className="container">
         <Link className="navbar-brand" href="/">
           <div id='nav-logo'>
-            <Image src={'/logo/logo-lightbg-horizontal-notag.svg'} className='img-fluid' width={200} height={100} />
+            <Image src={'/logo/logo-lightbg-horizontal-notag.svg'} className='img-fluid' width={200} height={100} alt="Unmasking Masculinity Logo" />
           </div>
         </Link>
         <button

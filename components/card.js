@@ -6,16 +6,16 @@ import Date from "./date";
 const Card = ({post}) => {
 
     return (
-        <div class="col-md-3" key={post?.slug}>
-            <div class="card">
-                <Image src={post.featuredImage?.node?.sourceUrl} class="card-img-top img-fluid" alt={post.title} width={post.featuredImage?.node?.mediaDetails?.width} height={post.featuredImage?.node?.mediaDetails?.height} />
-                <div class="card-body">
-                    <h5 class="card-title">{post?.title}</h5>
+        <div className="col-md-3" key={post?.slug}>
+            <div className="card">
+                <Image src={post.featuredImage?.node?.sourceUrl} className="card-img-top img-fluid" alt={post.title} width={post.featuredImage?.node?.mediaDetails?.width} height={post.featuredImage?.node?.mediaDetails?.height} />
+                <div className="card-body">
+                    <h5 className="card-title">{post?.title}</h5>
                     <p>
                         Posted on: <Date dateString={post.date} />
                     </p>
                     
-                    <Link href={`/blog/${post?.slug}`} class="btn btn-primary">Read Blog</Link>
+                    <Link href={`/blog/${post?.slug}`} className="btn btn-primary">Read Blog</Link>
                 </div>
             </div>
         </div>

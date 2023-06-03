@@ -31,16 +31,16 @@ export default function PodcastFeed({ feed, block }) {
                         ) : (null)}
                         {limitedItems.map((item) => (
                             <>
-                                <div class="col-md-3 mb-5" key={item.guid}>
-                                    <div class="card">
-                                        <Image src={item.itunes.image} class="card-img-top img-fluid" alt={item.title} width="500" height="500" />
-                                        <div class="card-body">
-                                            <h5 class="card-title">{item.title}</h5>
+                                <div className="col-md-3 mb-5" key={item.guid}>
+                                    <div className="card">
+                                        <Image src={item.itunes.image} className="card-img-top img-fluid" alt={item.title} width="500" height="500" />
+                                        <div className="card-body">
+                                            <h5 className="card-title">{item.title}</h5>
                                             <p>
                                                 Released on: <Date dateString={item.isoDate} />
                                             </p>
 
-                                            <Link href={item.enclosure.url.replace('https://pdcn.co/e/www.buzzsprout.com', podcastURL).replace('.mp3', '')} class="btn btn-primary">Listen now</Link>
+                                            <Link href={item.enclosure.url.replace('https://pdcn.co/e/www.buzzsprout.com', podcastURL).replace('.mp3', '')} className="btn btn-primary">Listen now</Link>
                                         </div>
                                     </div>
                                 </div>

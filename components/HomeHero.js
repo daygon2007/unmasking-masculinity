@@ -23,7 +23,7 @@ const HomeHero = ({ block }) => {
 
     return (
         <>
-            <div class="hero">
+            <div className="hero">
                 <div className={`container col-xl-10 col-xxl-8 px-4 py-5 ${hero_classes}`} id={`${hero_id}`}>
                     <div className="row align-items-center g-lg-5 py-5">
                         <div className="col-lg-6 text-center text-lg-start">
