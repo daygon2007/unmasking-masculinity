@@ -1,5 +1,4 @@
 import { getPageSlugs, getSinglePage } from "@/lib/pages";
-import { getMenu } from "@/lib/menu";
 import Head from "next/head";
 import Navigation from "@/components/nav";
 import Footer from "@/components/footer";
