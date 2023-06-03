@@ -1,0 +1,45 @@
+$white: #F2F2F2;
+$black: #0B0C0D;
+$grey-light: #A4A5A6;
+$grey-medium: #565759;
+$grey-dark: #242526;
+
+.white {
+    color: $white;
+}
+
+.black {
+    color: $black;
+}
+
+.grey-light {
+    color: $grey-light;
+}
+
+.grey-medium {
+    color: $grey-medium;
+}
+
+.grey-dark {
+    color: $grey-dark;
+}
+
+.bg-white {
+    background-color: $white;
+}
+
+.bg-black {
+    background-color: $black;
+}
+
+.bg-grey-light {
+    background-color: $grey-light;
+}
+
+.bg-grey-medium {
+    background-color: $grey-medium;
+}
+
+.bg-grey-dark {
+    background-color: $grey-dark;
+}
