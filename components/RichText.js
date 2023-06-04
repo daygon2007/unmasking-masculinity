@@ -1,3 +1,5 @@
+import parse from 'html-react-parser'; 
+
 export default function RichText({ block }) {
     const data = JSON.parse(block.dynamicContent);
 
@@ -19,7 +21,8 @@ export default function RichText({ block }) {
                                 <h2 className={`mt-0 text-center ${section_title_class}`}>{section_title}</h2>
                             </div>
                         ) : (null)}
-                        <div className="col-12" dangerouslySetInnerHTML={{__html: content}}>
+                        <div className="col-12">
+                            {parse(content)}
                         </div>
                     </div>
                 </div>

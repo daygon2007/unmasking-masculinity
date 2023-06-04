@@ -6,25 +6,29 @@ const LogoBar = ({ block }) => {
     const data = JSON.parse(block.dynamicContent);
 
     const {
+        section_id,
+        background_color,
+        section_class,
         logo_bar_text,
+        logo_bar_text_class,
         logos
     } = data
     return (
         <>
-            <div className='podcast-links bg-black py-3'>
-                <div className="container">
+            <div className={`podcast-links py-3 ${background_color}`} id={section_id}>
+                <div className={`container ${section_class}`}>
                     <div className='row align-items-center'>
                         <div className='col-md-2'>
-                            <p className='white m-0 p-0'>
+                            <p className={`m-0 p-0 ${logo_bar_text_class}`}>
                                 {logo_bar_text}
                             </p>
                         </div>
                         <div className='col-md-10'>
-                            <div className='d-flex flex-row justify-content-start'>
+                            <div className='row justify-content-center align-items-center'>
                                 {logos.map((link, index) => {
                                     const { logo, url } = link;
                                     return (
-                                        <div className='mx-5' key={index}>
+                                        <div className='col-md col-6' key={index}>
                                             <Link href={url}>
                                                 <Image
                                                     src={logo.img_url}
