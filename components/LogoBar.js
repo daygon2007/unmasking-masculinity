@@ -31,7 +31,7 @@ const LogoBar = ({ block }) => {
                                                     alt={logo.img_alt}
                                                     width={logo.img_width}
                                                     height={logo.img_height}
-                                                    className='img-fluid'
+                                                    className='img-fluid w-100'
                                                 />
                                             </Link>
                                         </div>

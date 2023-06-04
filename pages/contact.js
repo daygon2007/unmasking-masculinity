@@ -1,11 +1,35 @@
 import Head from "next/head";
-import Navigation from "@/components/nav";
 import Footer from "@/components/footer";
 import { useState } from "react";
+import Navigation from "@/components/nav";
+import HomeHero from "@/components/HomeHero";
+import parse from 'html-react-parser';
+import { getMenu } from "@/lib/menu";
+import LogoBar from '@/components/LogoBar';
+import PodcastFeed from "@/components/PodcastFeed";
+import RichText from "@/components/RichText";
+import Subscribe from "@/components/MailChimpSubscribe";
+import GeneralHero from "@/components/GeneralHero";
+import { getContactPage } from "@/lib/pages";
+
+export async function getStaticProps() {
+    const pageData = await getContactPage();
+    const menu = await getMenu();
+
+    return {
+        props: {
+            pageData: pageData,
+            menu: menu,
+        }
+    }
+}
 
 
 
-export default function Contact() {
+export default function Contact({pageData, menu}) {
+
+    const parsedHead = pageData?.seo?.fullHead ? parse(pageData?.seo?.fullHead) : null;
+    const pageBlocks = (pageData && pageData.blocks) || [];
 
     const [submitStatus, setSubmitStatus] = useState(false);
     const [responseMessage, setResponseMessage] = useState('');
@@ -44,17 +68,38 @@ export default function Contact() {
 
     return (
         <>
-        <Head>
-            <title>Contact Us - Unmasking Masculinity</title>
-        </Head>
-        <Navigation />
+            <Head>
+                {parsedHead}
+                <meta name="robots" content={`${pageData?.seo?.metaRobotsNoindex}, ${pageData?.seo?.metaRobotsNofollow}`} />
+            </Head>
+            <Navigation menu={menu} />
+            {pageBlocks.map((block, index) => {
+                const name = block.name;
 
-            <div className="container">
+                switch (name) {
+                    case 'acf/home-hero':
+                        return <HomeHero key={index} block={block} />;
+                    case 'acf/general-hero':
+                        return <GeneralHero key={index} block={block} />;
+                    // Add more cases for other block types
+                    case 'acf/logo-bar':
+                        return <LogoBar key={index} block={block} />;
+                    case 'acf/podcast-feed':
+                        return <PodcastFeed key={index} block={block} feed={feed} />
+                    case 'acf/rich-text':
+                        return <RichText key={index} block={block} />
+                    case 'acf/mailchimp-subscribe':
+                        return <Subscribe key={index} block={block} />
+                    default:
+                        return null;
+                }
+            })}
+        
+
+            <div className="container my-5">
                 <div className="row justify-content-center align-items-center">
                     <div className="col-md-8">
-                        <h1>Contact Us</h1>
-
-                        <form id="contactForm" className="needs-validation" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" name="contact" data-netlify-recaptcha="true">
+                        <form id="contactForm" className="needs-validation" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" name="contact" data-netlify-recaptcha="true" onSubmit="/success">
                             <input type="hidden" name="form-name" value="contact" />
                             <input name="bot-field" className="d-none" />
                             <div className="mb-3">

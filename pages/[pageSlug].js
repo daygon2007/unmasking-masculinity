@@ -3,7 +3,7 @@ import Head from "next/head";
 import Navigation from "@/components/nav";
 import Footer from "@/components/footer";
 import parse from 'html-react-parser';
-import HomeHero from "@/components/HomeHero";
+import GeneralHero from "@/components/GeneralHero";
 import LogoBar from '@/components/LogoBar';
 import { getMenu } from "@/lib/menu";
 import PodcastFeed from "@/components/PodcastFeed";
@@ -28,7 +28,7 @@ export async function getStaticProps({params}) {
 export async function getStaticPaths() {
     const pageSlugs = await getPageSlugs();
 
-    const filteredPaths = pageSlugs.filter((slug) => slug.slug !== 'blog' && slug.slug !== 'home');
+    const filteredPaths = pageSlugs.filter((slug) => slug.slug !== 'blog' && slug.slug !== 'home' && slug.slug !== 'contact' && slug.slug !== 'home');
 
     const paths = filteredPaths.map((s) => ({
         params: { pageSlug: s.slug },
@@ -42,7 +42,7 @@ export async function getStaticPaths() {
 
 
 
-export default function Page({ pageData, menu }) {
+export default function Page({ pageData, menu, feed }) {
     const parsedHead = pageData?.seo?.fullHead ? parse(pageData?.seo?.fullHead) : null;
     const pageBlocks = (pageData && pageData.blocks) || [];
 
@@ -58,8 +58,8 @@ export default function Page({ pageData, menu }) {
                 const name = block.name;
 
                 switch (name) {
-                    case 'acf/home-hero':
-                        return <HomeHero key={index} block={block} />;
+                    case 'acf/general-hero':
+                        return <GeneralHero key={index} block={block} />;
                     // Add more cases for other block types
                     case 'acf/logo-bar':
                         return <LogoBar key={index} block={block} />;
