@@ -30,7 +30,6 @@ export default function Success() {
             body: jsonData,
         });
         const result = await response.json();
-        console.log(result.data);
 
         setSubmitStatus(true);
         setResponseMessage(result.data);

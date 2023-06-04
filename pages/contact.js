@@ -30,7 +30,6 @@ export default function Contact() {
             body: jsonData,
         });
         const result = await response.json();
-        console.log(result.data);
 
         setSubmitStatus(true);
         setResponseMessage(result.data);
@@ -55,7 +54,7 @@ export default function Contact() {
                     <div className="col-md-8">
                         <h1>Contact Us</h1>
 
-                        <form id="contactForm" className="needs-validation" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" name="contact">
+                        <form id="contactForm" className="needs-validation" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" name="contact" data-netlify-recaptcha="true">
                             <input type="hidden" name="form-name" value="contact" />
                             <input name="bot-field" className="d-none" />
                             <div className="mb-3">
@@ -80,6 +79,10 @@ export default function Contact() {
                                 <div className="invalid-feedback">
                                     Please enter a message.
                                 </div>
+                            </div>
+
+                            <div className="my-3">
+                                <div data-netlify-recaptcha="true"></div>
                             </div>
 
                             <button type="submit" className="btn btn-primary">Submit</button>

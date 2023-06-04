@@ -1,6 +1,5 @@
 export default function RichText({ block }) {
     const data = JSON.parse(block.dynamicContent);
-    console.log(data);
 
     const {
         section_id,

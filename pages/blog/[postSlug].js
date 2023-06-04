@@ -5,6 +5,7 @@ import { getPostSlugs, getSinglePost } from "@/lib/posts";
 import parse from 'html-react-parser';
 import BlogHero from "@/components/blog_hero";
 import { getMenu } from "@/lib/menu";
+import DisqusComments from "@/components/DisqusComments";
 
 export async function getStaticProps({ params }) {
     const postData = await getSinglePost(params.postSlug);
@@ -46,6 +47,9 @@ export default function Post({postData, menu}) {
         <div className="container">
             <div className="row">
                 <div className="col-12" dangerouslySetInnerHTML={{__html: postData.content}}></div>
+                <div class="col-12 mt-5">
+                    <DisqusComments post={postData} />
+                </div>
             </div>
         </div>
         <Footer />

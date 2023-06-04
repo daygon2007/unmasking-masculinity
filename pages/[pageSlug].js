@@ -29,7 +29,6 @@ export async function getStaticPaths() {
     const pageSlugs = await getPageSlugs();
 
     const filteredPaths = pageSlugs.filter((slug) => slug.slug !== 'blog' && slug.slug !== 'home');
-    console.log(filteredPaths);
 
     const paths = filteredPaths.map((s) => ({
         params: { pageSlug: s.slug },
