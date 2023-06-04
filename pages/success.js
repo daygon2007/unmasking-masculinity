@@ -2,14 +2,25 @@ import Head from "next/head";
 import Navigation from "@/components/nav";
 import Footer from "@/components/footer";
 import { useState } from "react";
+import { getMenu } from "@/lib/menu";
 
+export async function getStaticProps() {
+    const menu = await getMenu();
 
+    return {
+        props: {
+            menu: menu,
+        }
+    }
+}
 
-export default function Success() {
+export default function Success({menu}) {
 
     const [submitStatus, setSubmitStatus] = useState(false);
     const [responseMessage, setResponseMessage] = useState('');
     const [alertColor, setAlertColor] = useState('alert-success');
+
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -47,7 +58,7 @@ export default function Success() {
         <Head>
             <title>Thank you for contacting us - Unmasking Masculinity</title>
         </Head>
-        <Navigation />
+        <Navigation menu={menu} />
 
             <div className="container py-5">
                 <div className="row justify-content-center align-items-center">
