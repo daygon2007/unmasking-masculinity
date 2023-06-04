@@ -49,7 +49,7 @@ export default function Success() {
         </Head>
         <Navigation />
 
-            <div className="container">
+            <div className="container py-5">
                 <div className="row justify-content-center align-items-center">
                     <div className="col-md-8">
                         <h1>Contact Us</h1>
