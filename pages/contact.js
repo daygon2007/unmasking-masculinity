@@ -99,7 +99,7 @@ export default function Contact({pageData, menu}) {
             <div className="container my-5">
                 <div className="row justify-content-center align-items-center">
                     <div className="col-md-8">
-                        <form id="contactForm" className="needs-validation" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" name="contact" action="/pages/success">
+                        <form id="contactForm" className="needs-validation" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" name="contact" action="/success">
                             <input type="hidden" name="form-name" value="contact" />
                             <input name="bot-field" className="d-none" />
                             <div className="mb-3">
