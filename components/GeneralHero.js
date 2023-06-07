@@ -23,11 +23,11 @@ const GeneralHero = ({ block }) => {
     return (
         <>
             <div className="hero py-5">
-                <div class="px-4 py-5 text-center">
-                    <h1 class="display-5 fw-bold white mb-3">{hero_text}</h1>
-                    <div class="col-lg-6 mx-auto">
-                        <p class="lead mb-4">{hero_sub_text}</p>
-                        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <div className="px-4 py-5 text-center">
+                    <h1 className="display-5 fw-bold white mb-3">{hero_text}</h1>
+                    <div className="col-lg-6 mx-auto">
+                        <p className="lead mb-4">{hero_sub_text}</p>
+                        <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
                             {hero_cta_text ? (
                                 <div className="mt-5">
                                     <Link

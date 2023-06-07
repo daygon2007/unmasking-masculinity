@@ -47,7 +47,7 @@ export default function Post({postData, menu}) {
         <div className="container">
             <div className="row">
                 <div className="col-12" dangerouslySetInnerHTML={{__html: postData.content}}></div>
-                <div class="col-12 mt-5">
+                <div className="col-12 mt-5">
                     <DisqusComments post={postData} />
                 </div>
             </div>

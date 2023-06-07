@@ -2,16 +2,17 @@ import { getPostList } from "@/lib/posts";
 import { useState } from "react";
 
 export default function LoadMore({posts, setPosts}) {
-
     const [buttonText, setButtonText] = useState('Load more');
     const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const handleOnclick = async (event) => {
+        
         let clickedBtn = event.target;
 
         setButtonText('Loading...');
 
-        const morePosts =  await getPostList(posts.pageInfo.endCursor);
+        const morePosts = await getPostList(posts.pageInfo.endCursor);
+        console.dir(morePosts, { depth: null });
 
         let updatedPosts = {
             pageInfo: {
@@ -19,8 +20,8 @@ export default function LoadMore({posts, setPosts}) {
             }, 
             nodes: [],
         }
-
         updatedPosts.pageInfo = morePosts.pageInfo;
+        
 
         posts.nodes.map((node) => {
             updatedPosts.nodes.push(node);

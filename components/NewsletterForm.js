@@ -46,7 +46,7 @@ export default function NewsletterForm({ status, message, onValidated }) {
     return (
         <>
             <div className="row justify-content-center">
-                <div class="col-8 col-md-5"><input
+                <div className="col-8 col-md-5"><input
                     type="email"
                     name="email"
                     value={email}
@@ -55,22 +55,22 @@ export default function NewsletterForm({ status, message, onValidated }) {
                     placeholder="Your Email"
                     onKeyUp={(event) => handleInputKeyEvent(event)}
                 /></div>
-                <div class="col-md-2">
+                <div className="col-md-2">
                     <button className="btn btn-light" onClick={handleFormSubmit}>
                         Submit
                     </button>
                 </div>
-                <div class="col-12">
+                <div className="col-12">
                     {'sending' === status ? (
-                        <div class="alert alert-info mt-3">
-                            Sending <i class="fa-solid fa-sync fa-spin"></i>
+                        <div className="alert alert-info mt-3">
+                            Sending <i className="fa-solid fa-sync fa-spin"></i>
                         </div>
                     ) : null}
                     {'error' === status || error ? (
-                        <div class="alert alert-danger mt-3" dangerouslySetInnerHTML={{ __html: error || getMessage(message) }}></div>
+                        <div className="alert alert-danger mt-3" dangerouslySetInnerHTML={{ __html: error || getMessage(message) }}></div>
                     ) : null}
                     {'success' === status && 'error' !== status && !error && (
-                        <div class="alert alert-success mt-3" dangerouslySetInnerHTML={{ __html: error || getMessage(message) }}></div>
+                        <div className="alert alert-success mt-3" dangerouslySetInnerHTML={{ __html: error || getMessage(message) }}></div>
                     )}
                 </div>
             </div>
