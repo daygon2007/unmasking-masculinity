@@ -4,7 +4,7 @@ import Date from "./date";
 const BlogHero = ({data}) => {
     return (
         <>
-            <div className="hero px-4 py-5 mb-5 text-center">
+            <div className="hero px-4 py-5 my-5 text-center">
                 <div className="container">
                     <div className="row justify-content-center align-items-center">
                         <h1 className="display-5 fw-bold">{data?.title}</h1>

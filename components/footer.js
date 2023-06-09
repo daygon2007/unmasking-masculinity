@@ -18,6 +18,7 @@ export default function Footer() {
                         <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-twitter' /></Link></li>
                         <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-instagram' /></Link></li>
                         <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-youtube' /></Link></li>
+                        <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-discord' /></Link></li>
                     </ul>
                 </footer>
             </div>
