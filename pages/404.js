@@ -27,7 +27,7 @@ export default function NotFound({ menu }) {
                 <div>
                     <h1 className="white">Uh oh...</h1>
                     <p className="lead white">What&apos;cha doin here? This isn't what you&apos;re looking for.</p>
-                    <p className="white">Let&apos;s get you pointed in the right direction... Here's our <Link href="/podcast/">podcast</Link> and here&apos;s our <Link href="/blog/">blog</Link>. If there's anything specific you're looking for, <Link href="/contact/">contact us</Link>.</p>
+                    <p className="white">Let&apos;s get you pointed in the right direction... Here's our <Link href="/podcast/">podcast</Link> and here&apos;s our <Link href="/blog/">blog</Link>. If there&apos;s anything specific you&apos;re looking for, <Link href="/contact/">contact us</Link>.</p>
                 </div>
             </div>
             <Footer />
