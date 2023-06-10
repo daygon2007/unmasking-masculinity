@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import Layout from '../app/layout';
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import TagManager from 'react-gtm-module';
 
 function MyApp({ Component, pageProps }) {
-    
+    useEffect(() => {
+        TagManager.initialize({ gtmId: 'GTM-5G3XQ9K'})
+    })
 
     return (
         <Layout>
