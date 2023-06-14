@@ -16,7 +16,7 @@ export default function Footer() {
                         {/*<li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-tiktok' /></Link></li>*/}
                         {/*<li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-linkedin' /></Link></li>*/}
                         <li className="ms-3"><Link href="https://twitter.com/MensAwareness" target='_blank' className='footer-social-link'><i className='fa-brands fa-twitter' /></Link></li>
-                        {/*<li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-instagram' /></Link></li>*/}
+                        <li className="ms-3"><Link href="https://www.instagram.com/unmaskingmasculinity/" target='_blank' className='footer-social-link'><i className='fa-brands fa-instagram' /></Link></li>
                         <li className="ms-3"><Link href="https://www.youtube.com/@UnmaskingMasculinity" target='_blank' className='footer-social-link'><i className='fa-brands fa-youtube' /></Link></li>
                         {/*<li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-discord' /></Link></li>*/}
                     </ul>
