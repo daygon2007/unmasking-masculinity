@@ -12,13 +12,13 @@ export default function Footer() {
                     </div>
 
                     <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-                        <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-facebook' /></Link></li>
-                        <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-tiktok' /></Link></li>
-                        <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-linkedin' /></Link></li>
-                        <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-twitter' /></Link></li>
-                        <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-instagram' /></Link></li>
-                        <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-youtube' /></Link></li>
-                        <li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-discord' /></Link></li>
+                        <li className="ms-3"><Link href="https://www.facebook.com/people/Unmasking-Masculinity/100093406999722/" target='_blank' className='footer-social-link'><i className='fa-brands fa-facebook' /></Link></li>
+                        {/*<li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-tiktok' /></Link></li>*/}
+                        {/*<li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-linkedin' /></Link></li>*/}
+                        <li className="ms-3"><Link href="https://twitter.com/MensAwareness" target='_blank' className='footer-social-link'><i className='fa-brands fa-twitter' /></Link></li>
+                        {/*<li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-instagram' /></Link></li>*/}
+                        <li className="ms-3"><Link href="https://www.youtube.com/@UnmaskingMasculinity" target='_blank' className='footer-social-link'><i className='fa-brands fa-youtube' /></Link></li>
+                        {/*<li className="ms-3"><Link href="#" target='_blank' className='footer-social-link'><i className='fa-brands fa-discord' /></Link></li>*/}
                     </ul>
                 </footer>
             </div>
