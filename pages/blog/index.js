@@ -17,12 +17,14 @@ import Subscribe from "@/components/MailChimpSubscribe";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import NewsletterForm from "@/components/NewsletterForm";
 import GeneralHero from "@/components/GeneralHero";
+import generateRssFeed from "@/lib/generateRSSFeed";
 
 export async function getStaticProps() {
     const allPosts = await getPostList();
     const pageData = await getBlogPage();
     const menu = await getMenu();
     const podcastFeed = await getFeed();
+    await generateRssFeed();
 
     return {
         props: {
