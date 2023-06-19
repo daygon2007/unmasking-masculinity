@@ -9,7 +9,7 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'storage.buzzsprout.com'
+                hostname: 'd3t3ozftmdmh3i.cloudfront.net'
             }
         ],
     },
