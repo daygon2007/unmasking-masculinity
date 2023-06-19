@@ -49,7 +49,7 @@ const HomeHero = ({ block }) => {
                         <div className='col-md-10 mx-auto col-lg-6'>
                             <div className='ratio ratio-16x9'>
                                 {isClient ? (
-                                    <ReactPlayer url="https://www.youtube.com/watch?v=IcVimAcoPJM" className="w-100 h-100" />
+                                    <ReactPlayer url="https://www.youtube.com/watch?v=qmDnaWvwsEI" className="w-100 h-100" />
                                 ) : null}
                             </div>
                             
