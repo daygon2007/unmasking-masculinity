@@ -13,14 +13,6 @@ const nextConfig = {
             }
         ],
     },
-    async rewrites() {
-        return [
-            {
-                source: '/functions/recaptcha',
-                destination: '/functions/recaptcha.js',
-            },
-        ];
-    },
 }
 
 module.exports = nextConfig

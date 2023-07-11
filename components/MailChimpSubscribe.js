@@ -1,5 +1,4 @@
 import { useCallback, useState } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import NewsletterForm from "./NewsletterForm";
 
