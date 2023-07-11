@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Layout from '../app/layout';
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import TagManager from 'react-gtm-module';
 
 function MyApp({ Component, pageProps }) {
@@ -10,17 +9,7 @@ function MyApp({ Component, pageProps }) {
 
     return (
         <Layout>
-            <GoogleReCaptchaProvider
-                reCaptchaKey={process.env.RECAPTCHA_SITE_KEY}
-                scriptProps={{
-                    async: false,
-                    defer: false,
-                    appendTo: "head",
-                    nonce: undefined,
-                }}
-            >
             <Component {...pageProps} />
-            </GoogleReCaptchaProvider>
         </Layout>
     );
 }
