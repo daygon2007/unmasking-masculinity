@@ -41,7 +41,7 @@ export default function PodcastFeed({ feed, block }) {
                                                 Released on: <Date dateString={item.isoDate} />
                                             </p>
 
-                                            <Link href={item.link} className="btn btn-primary">Listen now</Link>
+                                            <Link href={item.link} className="btn btn-primary" target="_blank">Listen now</Link>
                                         </div>
                                     </div>
                                 </div>
