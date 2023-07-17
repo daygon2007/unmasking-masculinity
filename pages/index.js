@@ -34,7 +34,7 @@ export default function Page({ pageData, menu, feed }) {
     return (
         <>
             <Head>
-                {parsedHead}
+                {parsedHead.replaceAll(`podcast.jonathon-harrelson.com`,`unmasking-masculinity.com`)}
                 <meta name="robots" content={`${pageData?.seo?.metaRobotsNoindex}, ${pageData?.seo?.metaRobotsNofollow}`} />
             </Head>
             <Navigation menu={menu} />
