@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 
 
 export default function Page({ pageData, menu, feed }) {
-    const parsedHead = pageData?.seo?.fullHead ? parse(pageData?.seo?.fullHead) : null;
+    const parsedHead = pageData?.seo?.fullHead ? parse(pageData?.seo?.fullHead.replaceAll('podcast.jonathon-harrelson.com', 'unmasking-masculinity.com')) : null;
     const pageBlocks = (pageData && pageData.blocks) || [];
 
 

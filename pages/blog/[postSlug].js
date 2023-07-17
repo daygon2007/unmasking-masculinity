@@ -35,7 +35,7 @@ export async function getStaticPaths() {
 }
 
 export default function Post({postData, menu}) {
-    const parsedHead = postData.seo.fullHead ? parse(postData.seo.fullHead) : null;
+    const parsedHead = postData.seo.fullHead ? parse(postData.seo.fullHead.replaceAll('podcast.jonathon-harrelson.com', 'unmasking-masculinity.com')) : null;
     return (
         <>
         <Head>

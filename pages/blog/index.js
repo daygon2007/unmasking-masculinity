@@ -38,7 +38,7 @@ export async function getStaticProps() {
 
 export default function BlogHome({ allPosts, pageData, menu }) {
 
-    const parsedHead = pageData?.seo?.fullHead ? parse(pageData?.seo?.fullHead) : null;
+    const parsedHead = pageData?.seo?.fullHead ? parse(pageData?.seo?.fullHead.replaceAll('podcast.jonathon-harrelson.com', 'unmasking-masculinity.com')) : null;
     const pageBlocks = (pageData && pageData.blocks) || [];
 
     const [posts, setPosts] = useState(allPosts);
