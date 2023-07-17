@@ -26,7 +26,7 @@ export async function getStaticProps() {
 }
 
 export default function Page({ pageData, menu, feed }) {
-    const parsedHead = pageData?.seo?.fullHead ? parse(pageData?.seo?.fullHead) : null;
+    const parsedHead = pageData?.seo?.fullHead ? parse(pageData?.seo?.fullHead.replaceAll('podcast.jonathon-harrelson.com', 'unmasking-masculinity.com')) : null;
     const pageBlocks = (pageData && pageData.blocks) || [];
     
 
@@ -34,7 +34,7 @@ export default function Page({ pageData, menu, feed }) {
     return (
         <>
             <Head>
-                {parsedHead.replace('podcast.jonathon-harrelson.com', 'unmasking-masculinity.com')}
+                {parsedHead}
                 <meta name="robots" content={`${pageData?.seo?.metaRobotsNoindex}, ${pageData?.seo?.metaRobotsNofollow}`} />
             </Head>
             <Navigation menu={menu} />
