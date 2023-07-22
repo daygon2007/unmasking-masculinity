@@ -9,8 +9,14 @@ const BlogHero = ({data}) => {
                     <div className="row justify-content-center align-items-center">
                         <h1 className="display-5 fw-bold">{data?.title}</h1>
                         <div className="col-lg-6 mx-auto">
-                            <p className="lead mb-4">Last updated: <Date dateString={data?.modified} /></p>
-                            <p>Estimated time to read: {data?.seo.readingTime} minutes</p>
+                            {data?.modified &&
+                                <p className="lead mb-4">Last updated: <Date dateString={data.modified} /></p>
+                            }
+                            {
+                                data?.seo?.readingTime &&
+                                <p>Estimated time to read: {data?.seo?.readingTime} minutes</p>
+                            }
+                            
                         </div>
                     </div>
                 </div>
