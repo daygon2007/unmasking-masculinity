@@ -4,7 +4,7 @@
         <title>Unmasking Masculinity Blog</title>
         <link>https://www.unmasking-masculinity.com</link>
         <description>Discover a wealth of knowledge, insights, and personal stories as we unravel the complexities of men&amp;apos;s mental health, empowering you to break free from societal expectations and embrace a path of healing and growth.</description>
-        <lastBuildDate>Wed, 14 Jun 2023 05:32:02 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 21 Jul 2023 23:45:22 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,24 @@
             <link>https://www.unmasking-masculinity.com</link>
         </image>
         <copyright>All rights reserved 2023, Unmasking Masculinity</copyright>
+        <item>
+            <title><![CDATA[Redefine Success: Breaking Free of Society’s Narrow Measures]]></title>
+            <link>https://www.unmasking-masculinity.com/blog/redefine-success-breaking-free-of-societys-narrow-measures</link>
+            <guid>https://www.unmasking-masculinity.com/blog/redefine-success-breaking-free-of-societys-narrow-measures</guid>
+            <pubDate>Mon, 17 Jul 2023 05:08:35 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Exploring Traditional Masculinity Definitions and Societal Impacts]]></title>
+            <link>https://www.unmasking-masculinity.com/blog/exploring-traditional-masculinity-definitions-and-societal-impacts</link>
+            <guid>https://www.unmasking-masculinity.com/blog/exploring-traditional-masculinity-definitions-and-societal-impacts</guid>
+            <pubDate>Thu, 13 Jul 2023 21:47:02 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Why men’s mental health is in crisis]]></title>
+            <link>https://www.unmasking-masculinity.com/blog/why-mens-mental-health-is-in-crisis</link>
+            <guid>https://www.unmasking-masculinity.com/blog/why-mens-mental-health-is-in-crisis</guid>
+            <pubDate>Mon, 19 Jun 2023 12:18:22 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Recharge and Revitalize: The Power of Taking Breaks for Men’s Mental Health]]></title>
             <link>https://www.unmasking-masculinity.com/blog/recharge-and-revitalize-the-power-of-taking-breaks-for-mens-mental-health</link>

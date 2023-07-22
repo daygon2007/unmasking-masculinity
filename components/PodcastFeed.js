@@ -16,7 +16,6 @@ export default function PodcastFeed({ feed, block }) {
     } else {
         limitedItems = feed;
     }
-    console.log(feed);
 
     const podcastURL = 'https://anchor.fm/s/e2d645d8/podcast/rss';
 
@@ -41,7 +40,7 @@ export default function PodcastFeed({ feed, block }) {
                                                 Released on: <Date dateString={item.isoDate} />
                                             </p>
 
-                                            <Link href={item.link} className="btn btn-primary" target="_blank">Listen now</Link>
+                                            <Link href={`/podcast/` + JSON.stringify(item.title).replace(/ /g, '-').toLowerCase().replace(/[\[\]"]/g, '')} className="btn btn-primary">Listen now</Link>
                                         </div>
                                     </div>
                                 </div>
