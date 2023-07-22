@@ -1,3 +1,4 @@
+import Head from "next/head";
 import BlogHero from '@/components/blog_hero';
 import Footer from '@/components/footer';
 import Navigation from '@/components/nav';
