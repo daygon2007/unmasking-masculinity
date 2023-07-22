@@ -36,6 +36,7 @@ export default function Page({ pageData, menu, feed }) {
             <Head>
                 {parsedHead}
                 <meta name="robots" content={`${pageData?.seo?.metaRobotsNoindex}, ${pageData?.seo?.metaRobotsNofollow}`} />
+                <meta name="p:domain_verify" content="49a3e5be734f2b1560f6f705d5b2dd09" />
             </Head>
             <Navigation menu={menu} />
             {pageBlocks.map((block, index) => {
