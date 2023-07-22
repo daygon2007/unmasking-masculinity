@@ -61,6 +61,10 @@ export default function Episode({ episode, menu }) {
 
     return (
         <>
+            <Head>
+                <title>{episode.data.title}</title>
+                <meta name="robots" content="index, follow"/>
+            </Head>
             <Navigation menu={menu} />
             <BlogHero data={episode.data} />
             
